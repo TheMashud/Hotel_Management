@@ -79,6 +79,27 @@ class Hotel(Common):
         guest.address = address
         guest.number = number
 
-class Staff:
-    pass
+class Staff(Common):
+    def __init__(self, staff_id ,Name, role, Phone):
+        self.staff_id = staff_id
+        self.role = role
+        super().__init__(Name, Phone)
+
+
+class EmloyeeManagement:
+    def __init__(self) -> None:
+        self.staff_members = []
+
+    def add_staff_members(self, staff):
+        self.staff_members.append(staff)
+
+    def remove_staff_members(self, staff):
+        self.staff_members.remove(staff)
+
+    def update_staff_informataion(self, staff, name, role, number):
+        staff.name = name
+        staff.role = role
+        staff.number = number
+
+    
         
